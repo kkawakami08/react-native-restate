@@ -4,8 +4,9 @@
     "slug": "react-native-restate",
     "version": "1.0.0",
     "orientation": "portrait",
+    //icon displayed in splash screen
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "restate",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -13,7 +14,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#ffffff"
       }
     },
@@ -25,15 +26,31 @@
     "plugins": [
       "expo-router",
       [
+        //what shows when the app first opens and is loading
         "expo-splash-screen",
         {
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "resizeMode": "cover",
+          "backgroundColor": "#ffffff",
+          "enableFullScreenImage_legacy": true
+        }
+      ],
+      //adding fonts
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Rubik-Bold.ttf",
+            "./assets/fonts/Rubik-ExtraBold.ttf",
+            "./assets/fonts/Rubik-Medium.ttf",
+            "./assets/fonts/Rubik-Light.ttf",
+            "./assets/fonts/Rubik-Regular.ttf",
+            "./assets/fonts/Rubik-SemiBold.ttf"
+          ]
         }
       ]
     ],
+
     "experiments": {
       "typedRoutes": true
     }
