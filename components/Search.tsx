@@ -1,18 +1,25 @@
 import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { useLocalSearchParams, usePathname } from "expo-router";
+import { router, useLocalSearchParams, usePathname } from "expo-router";
 import icons from "@/constants/icons";
+import { useDebouncedCallback } from "use-debounce";
 
 const Search = () => {
   const path = usePathname();
+
+  //returns query
   const params = useLocalSearchParams<{ query?: string }>();
+
   const [search, setSearch] = useState(params.query);
 
-  const debouncedSearch = useDebouncedCallback()
+  //use debounce because don't want to make call for every letter input, rather wait for 500 (ms? s?) to send only one request
+  const debouncedSearch = useDebouncedCallback((text: string) => {
+    router.setParams({ query: text });
+  }, 500);
 
   const handleSearch = (text: string) => {
-
     setSearch(text);
+    debouncedSearch(text);
   };
 
   return (
