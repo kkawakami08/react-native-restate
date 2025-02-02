@@ -68,7 +68,7 @@ export default function Index() {
         renderItem={({ item }) => (
           <Card item={item} onPress={() => handleCardPress(item.$id)} />
         )}
-        keyExtractor={(item) => item.toString()}
+        keyExtractor={(item) => item.$id}
         numColumns={2}
         contentContainerClassName="pb-32"
         columnWrapperClassName="flex gap-5 px-5"
@@ -133,7 +133,7 @@ export default function Index() {
                     />
                   )}
                   //for unique keys
-                  keyExtractor={(item) => item.toString()}
+                  keyExtractor={(item) => item.$id}
                   horizontal
                   //prevent vertical movment
                   bounces={false}
