@@ -3,22 +3,17 @@ import {
   View,
   Image,
   TouchableOpacity,
-  ScrollView,
   FlatList,
-  Button,
   ActivityIndicator,
 } from "react-native";
-import { Link, router, useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import images from "@/constants/images";
 import icons from "@/constants/icons";
 import Search from "@/components/Search";
-import { FeaturedCard, Card } from "@/components/Cards";
+import { Card } from "@/components/Cards";
 import Filters from "@/components/Filters";
-import { useGlobalContext } from "@/lib/global-provider";
-import seed from "@/lib/seed";
 import { useAppwrite } from "@/lib/useAppwrite";
-import { getLatestProperties, getProperties } from "@/lib/appwrite";
+import { getProperties } from "@/lib/appwrite";
 import { useEffect } from "react";
 import NoResults from "@/components/NoResults";
 

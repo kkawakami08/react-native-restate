@@ -1,4 +1,4 @@
-import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
+import { View, Image, TextInput, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { router, useLocalSearchParams, usePathname } from "expo-router";
 import icons from "@/constants/icons";
